@@ -10,7 +10,7 @@ import ListBlog from "./Pages/admin/ListBlog";
 import Login from "./components/admin/Login";
 import 'quill/dist/quill.snow.css'
 import { Toaster } from "react-hot-toast";
-import { useAppContext } from "./context/Appcontext";
+import { useAppContext } from "./context/AppContext";
 
 const App = () => {
 
