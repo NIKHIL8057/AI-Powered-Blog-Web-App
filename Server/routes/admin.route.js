@@ -5,11 +5,11 @@ import { auth } from '../middleware/auth.js';
 const router = express.Router();
 
 router.post("/login",adminLogin)
-router.post("/comments",auth,getAllcomments)
-router.post("/blogs",auth,getAllBlogsByAdmin)
+router.get("/comments",auth,getAllcomments)
+router.get("/blogs",auth,getAllBlogsByAdmin)
 router.post("/delete-comments",auth,deleteCommentsById)
 router.post("/approved-comments",auth,approveCommentsById)
-router.post("/dashboard",auth,getDashboard)
+router.get("/dashboard",auth,getDashboard)
 
 
 

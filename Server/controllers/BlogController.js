@@ -2,6 +2,7 @@ import fs from "fs"
 import Blog from "../models/Blog.js";
 import imagekit from "../config/imagekit.js"
 import Comments from "../models/Comments.js";
+import main from "../config/gemini.js";
 
 // Controller to add a new blog post with image upload and optimization
 export const addBlog = async (req,res) => {
@@ -116,6 +117,17 @@ export const getBlogcommnets = async (req,res) => {
         const comments = await Comments.find({ blog: blogId, isApproved: true }).sort({ createdAt: -1 }); // get approved comments for the blog sorted by newest first
 
         res.status(200).json({success:true,comments});
+    } catch (error) {
+    }
+}
+// Generate content 
+export const generateContent = async (req,res) => {
+    try {
+        const {prompt} = req.body;
+        const content = await main(prompt + 'Generate a blog content for this topic in simple text format')
+ 
+        res.json({success: true, content})
+    
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
