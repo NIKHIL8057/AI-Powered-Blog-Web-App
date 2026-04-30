@@ -12,9 +12,11 @@ const app = express();
 app.use(express.json())
 // app.use(cors())
 app.use(cors({
-  origin: "https://quick-blog-git-main-nikhil8057s-projects.vercel.app",
+  origin: 'https://quick-blog-eta-ochre.vercel.app', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
-}));
+}))
+
 
 // MongoDb connection
 connectDB()
@@ -32,3 +34,5 @@ app.get('/',(req,res) => {
 app.listen(port,() => {
      console.log(`Server is running port ${port}`)
 })
+
+export default app;
