@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json())
 // app.use(cors())
 app.use(cors({
-  origin: 'https://job-portal-fullstack-seven.vercel.app', 
+  origin: 'https://quick-blog-eta-ochre.vercel.app', 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }))
